@@ -512,6 +512,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
             </File>
+            <File>
+              <FileName>my_inv_mpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\eMPL\my_inv_mpu.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

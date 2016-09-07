@@ -17,6 +17,7 @@
 "..\output\stm32_iic.o"
 "..\output\inv_mpu.o"
 "..\output\inv_mpu_dmp_motion_driver.o"
+"..\output\my_inv_mpu.o"
 --strict --scatter "..\Output\вкл╛╟Е.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
