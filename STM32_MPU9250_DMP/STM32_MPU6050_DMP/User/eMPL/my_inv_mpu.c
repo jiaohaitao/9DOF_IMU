@@ -4,8 +4,8 @@
 #include "inv_mpu.h"
 #include "math.h"
 #include "usart.h"
-#include "stm32_iic.h"
-
+#include "stm32_mpu_iic.h"
+#include "my_inv_mpu.h"
 
 
 #define PRINT_ACCEL     (0x01)
@@ -171,8 +171,7 @@ static void run_self_test(void)
 
 int my_mpu_init(void)
 {
-		int result=0;
-    i2cInit();     
+		int result=0;   
    
      result= mpu_init();
   
@@ -271,8 +270,8 @@ int my_mpu_init(void)
 int my_read_imu(short *accel,short *gyro,float *Roll,float *Pitch,float *Yaw)
 {
 		unsigned long sensor_timestamp;
-		short sensors;
 		unsigned char more;
+		short sensors;
 		long quat[4];	
     int result=1;
 	
@@ -312,5 +311,7 @@ int my_read_imu(short *accel,short *gyro,float *Roll,float *Pitch,float *Yaw)
 		{}
 		if(sensors & INV_XYZ_ACCEL)
 		{}
+			
+		return result;	
 	
 }	

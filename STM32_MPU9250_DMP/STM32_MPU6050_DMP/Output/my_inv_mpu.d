@@ -17,4 +17,5 @@
 ..\output\my_inv_mpu.o: ..\User\eMPL\inv_mpu.h
 ..\output\my_inv_mpu.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\math.h
 ..\output\my_inv_mpu.o: ..\User\usart.h
-..\output\my_inv_mpu.o: ..\User\stm32_iic.h
+..\output\my_inv_mpu.o: ..\User\eMPL\stm32_mpu_iic.h
+..\output\my_inv_mpu.o: ..\User\eMPL\my_inv_mpu.h

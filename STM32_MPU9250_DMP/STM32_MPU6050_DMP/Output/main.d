@@ -12,7 +12,9 @@
 ..\output\main.o: ..\Lib\inc\stm32f10x_tim.h
 ..\output\main.o: ..\Lib\inc\stm32f10x_usart.h
 ..\output\main.o: ..\Lib\inc\misc.h
-..\output\main.o: ..\User\delay.h
 ..\output\main.o: d:\Keil_v5\ARM\ARMCC\bin\..\include\math.h
+..\output\main.o: ..\User\delay.h
 ..\output\main.o: ..\User\usart.h
 ..\output\main.o: ..\User\eMPL\my_inv_mpu.h
+..\output\main.o: ..\User\eMPL\stm32_mpu_iic.h
+..\output\main.o: ..\User\eMPL\inv_imu_app.h

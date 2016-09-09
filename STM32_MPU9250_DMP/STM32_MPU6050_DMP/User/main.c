@@ -13,11 +13,13 @@
 ***************************************************/
  
 #include "stm32f10x.h"
-#include "delay.h"
 #include "math.h"
+
+#include "delay.h"
 #include "usart.h"
 #include "my_inv_mpu.h"
-
+#include "stm32_mpu_iic.h"
+#include "inv_imu_app.h"
 
 #define  led_on    GPIO_ResetBits(GPIOC, GPIO_Pin_13)
 #define  led_off   GPIO_SetBits(GPIOC, GPIO_Pin_13)
@@ -46,42 +48,57 @@ int main(void)
    
     u16 count=0;    	
 	  int MPU_INIT_FLAG=0;
-	  short acc[3],gyo[3];
+	  short acc[3],gyo[3],mag[3];
 		float roll,pitch,yaw;
+		float Init_Imu_Position[3]={0};
     SystemInit();
     
     USART2_Config();  //串口初始化
+		 
   
     LED_Config();
     led_off;
-		MPU_INIT_FLAG=my_mpu_init();
+		
+		Init_Imu_Position[0]=Init_Imu_Position[1]=Init_Imu_Position[2]=0.0;
+		Get_Imu_Init_Position(Init_Imu_Position);
+		Data_Send_Status(Init_Imu_Position[0],Init_Imu_Position[1],Init_Imu_Position[2]);
+		Init_Imu_Position[2]*=-1.0;
+		mpu_i2cInit(); 
+	  MPU_INIT_FLAG=my_mpu_init();
     while(1)
     {
 			//----------------------------------------------------LED---------------------------------------
         count ++;          //灯亮灭代表正在运行状态
-        if(count<1000)
+        if(count<100)
         {
-            led_on;  
-            
+            led_on;              
         }
-        else if(count<2000)
+        else if(count<200)
         {
             led_off;  
-            
         }
-        else if(count==2000)
+        else if(count==200)
         {
             count = 0; 
-            
         }
 			//-----------------------------------------------------MPU-----------------------------------------
 			if(MPU_INIT_FLAG==0){
-				//void my_read_imu(short *accel,short *gyro,float *Roll,float *Pitch,float *Yaw)
+				//int my_read_imu(short *accel,short *gyro,float *Roll,float *Pitch,float *Yaw)
 				if(my_read_imu(acc,gyo,&roll,&pitch,&yaw)==0){
-					Data_Send_Status(roll,pitch,yaw);
-					Send_Data(acc[0],acc[1],acc[2],gyo[0],gyo[1],gyo[2],0,0,0);
-				}
-			}        
+							yaw=yaw+Init_Imu_Position[2];
+					//yaw+=10;
+							if(yaw>180.0){
+								yaw-=360.0;
+							}
+							else if(yaw<-180.0){
+								yaw+=360.0;
+							}
+							else{}
+							Data_Send_Status(roll,pitch,yaw);
+							Send_Data(acc[0],acc[1],acc[2],gyo[0],gyo[1],gyo[2],0,0,0);						
+						}
+				}     
+		//	delay_ms(5);
     }//end while(1)
 
 }

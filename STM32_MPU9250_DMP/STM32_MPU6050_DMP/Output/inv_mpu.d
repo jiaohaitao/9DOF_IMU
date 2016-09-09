@@ -17,7 +17,7 @@
 ..\output\inv_mpu.o: ..\Lib\inc\stm32f10x_tim.h
 ..\output\inv_mpu.o: ..\Lib\inc\stm32f10x_usart.h
 ..\output\inv_mpu.o: ..\Lib\inc\misc.h
-..\output\inv_mpu.o: ..\User\stm32_iic.h
+..\output\inv_mpu.o: ..\User\eMPL\stm32_mpu_iic.h
 ..\output\inv_mpu.o: ..\User\delay.h
 ..\output\inv_mpu.o: ..\User\Time.h
 ..\output\inv_mpu.o: ..\User\usart.h

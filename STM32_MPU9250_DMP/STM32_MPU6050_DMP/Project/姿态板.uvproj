@@ -492,11 +492,6 @@
               <FileType>1</FileType>
               <FilePath>..\User\Time.c</FilePath>
             </File>
-            <File>
-              <FileName>stm32_iic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\stm32_iic.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -516,6 +511,26 @@
               <FileName>my_inv_mpu.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\eMPL\my_inv_mpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32_mpu_iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\eMPL\stm32_mpu_iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>mpu9250_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\eMPL\mpu9250_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>Imu_Init_Position.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\eMPL\Imu_Init_Position.c</FilePath>
+            </File>
+            <File>
+              <FileName>inv_imu_app.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\eMPL\inv_imu_app.c</FilePath>
             </File>
           </Files>
         </Group>

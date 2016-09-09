@@ -24,7 +24,7 @@
 #include <math.h>
 #include "inv_mpu.h"
 #include "stm32f10x.h"
-#include "stm32_iic.h"
+#include "stm32_mpu_iic.h"
 #include "delay.h"
 #include "Time.h"
 #include "usart.h"

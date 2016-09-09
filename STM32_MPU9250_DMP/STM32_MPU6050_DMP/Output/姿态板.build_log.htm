@@ -8,10 +8,14 @@ Project File Date:  09/07/2016
 
 <h2>Output:</h2>
 Build target 'Target 1'
+compiling mpu9250_driver.c...
+..\User\eMPL\mpu9250_driver.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\User\eMPL\mpu9250_driver.c: 1 warning, 0 errors
 linking...
-Program Size: Code=26696 RO-data=3672 RW-data=124 ZI-data=1652  
+Program Size: Code=31860 RO-data=3972 RW-data=208 ZI-data=1688  
 FromELF: creating hex file...
-"..\Output\×ËÌ¬°å.axf" - 0 Error(s), 0 Warning(s).
+"..\Output\×ËÌ¬°å.axf" - 0 Error(s), 1 Warning(s).
 Load "..\\Output\\×ËÌ¬°å.axf" 
 Set JLink Project File to "E:\9DOF_IMU\STM32_MPU9250_DMP\STM32_MPU6050_DMP\Project\JLinkSettings.ini"
 * JLink Info: Device "STM32F103C8" selected (64 KB flash, 20 KB RAM).
@@ -34,7 +38,7 @@ ROMTableAddr = 0xE00FF003
 Target info:
 ------------
 Device: STM32F103C8
-VTarget = 3.300V
+VTarget = 3.293V
 State of Pins: 
 TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
 Hardware-Breakpoints: 6
@@ -46,10 +50,6 @@ Erase Done.
 Programming Done.
 Verify OK.
 Application running ...
-D: variable "result" was set but never used
-      int result=1;
-..\User\eMPL\my_inv_mpu.c: 3 warnings, 0 errors
-linking...
-Program Size: Code=26696 RO-data=3672 RW-data=124 ZI-data=1652  
-FromELF: creating hex file...
-"..\Output\×ËÌ¬°å.axf" - 0 Error(s), 5 Warning(s).
+</pre>
+</body>
+</html>

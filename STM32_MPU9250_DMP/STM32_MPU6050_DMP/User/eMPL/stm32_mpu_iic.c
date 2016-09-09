@@ -1,4 +1,4 @@
-#include "stm32_iic.h"
+#include "stm32_mpu_iic.h"
 
 
 #define  SCL_H         GPIOB->BSRR = GPIO_Pin_6  
@@ -8,7 +8,6 @@
 
 #define  SCL_read      GPIOB->IDR  & GPIO_Pin_6  
 #define  SDA_read      GPIOB->IDR  & GPIO_Pin_7  
-
 
 
 
@@ -23,14 +22,14 @@ static void I2C_delay(void)
 
  
 //IIC接口初始化
-void i2cInit(void)
+void mpu_i2cInit(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
     
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
  
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
     GPIO_Init(GPIOB, &GPIO_InitStructure);
 }

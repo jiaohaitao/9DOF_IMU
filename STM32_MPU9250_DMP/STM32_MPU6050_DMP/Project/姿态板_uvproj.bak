@@ -492,11 +492,6 @@
               <FileType>1</FileType>
               <FilePath>..\User\Time.c</FilePath>
             </File>
-            <File>
-              <FileName>stm32_iic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\stm32_iic.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -515,7 +510,12 @@
             <File>
               <FileName>my_inv_mpu.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\my_inv_mpu.c</FilePath>
+              <FilePath>..\User\eMPL\my_inv_mpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32_mpu_iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\eMPL\stm32_mpu_iic.c</FilePath>
             </File>
           </Files>
         </Group>
